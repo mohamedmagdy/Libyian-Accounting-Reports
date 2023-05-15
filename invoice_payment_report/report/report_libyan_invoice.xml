@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <template id="report_libyan_invoice">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="invoice_payment_report.invoice_payment_layout">
+                        <div class="page">
+                            <div class="row text-center" style="text-align: center !important;">
+                                <div class="row col-12 text-center pull-right"
+                                     style="text-align: center !important;float:right: direction:rtl !important;">
+                                    <h2 style="font-family: Cairo-Bold;font-weight: bold;text-align: center !important;width:100%;"
+                                        class="text-center">فاتورة
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="row pull-right"
+                                 style="direction:rtl !important;text-align:right !important;font-family: Cairo-Black; width:100%;">
+                                <div class="row col-12">
+                                    <div class="col-6" style="text-align:right !important;font-family: Cairo-Black;">
+                                        <strong style="font-family: Cairo-Black;">الأخ:</strong>
+                                        <t t-esc="o.partner_id.name"/>
+                                        <br/>
+                                    </div>
+                                    <div class="col-6"
+                                         style="text-align:left !important;font-family: Cairo-Black;float:left !important;">
+                                        <strong>رقم الفاتورة:</strong>
+                                        <t t-esc="o.name"/>
+                                        <br/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row pull-right"
+                                 style="direction:rtl !important;text-align:right !important;font-family: Cairo-Black; width:100%;">
+                                <div class="row col-12">
+                                    <div class="col-6" style="text-align:right !important;font-family: Cairo-Black;">
+                                        <strong style="font-family: Cairo-Black;">البيان:</strong>
+                                        <t t-esc="o.partner_id.name"/>
+                                        <br/>
+                                    </div>
+                                    <div class="col-6"
+                                         style="text-align:left !important;font-family: Cairo-Black;float:left !important;">
+                                        <strong>التاريخ:</strong>
+                                        <t t-esc="o.invoice_date"/>
+                                        <br/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row pull-right"
+                                 style="direction:rtl !important;text-align:right !important;font-family: Cairo-Black; width:100%;">
+                                <div class="row col-12">
+                                    <table class="table table-bordered" style="font-family: Cairo-Black;">
+                                        <thead>
+                                            <tr>
+                                                <th>ر.م</th>
+                                                <th>اسم المادة</th>
+                                                <th>الكمية</th>
+                                                <th>السعر</th>
+                                                <th>الإجمالي</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <t t-set="counter" t-value="0"/>
+                                            <tr t-foreach="o.invoice_line_ids" t-as="l">
+                                                <t t-if="not l.exclude_from_invoice_tab">
+                                                    <t t-set="counter" t-value="counter+1"/>
+                                                    <td>
+                                                        <t t-esc="counter"/>
+                                                    </td>
+                                                    <td>
+                                                        <t t-esc="l.product_id.name"/>
+                                                    </td>
+                                                    <td>
+                                                        <t t-esc="l.quantity"/>
+                                                    </td>
+                                                    <td>
+                                                        <t t-esc="l.price_unit"/>
+                                                    </td>
+                                                    <td>
+                                                        <t t-esc="l.price_subtotal"/>
+                                                    </td>
+                                                </t>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </div>
+                                    </div>
+                                <div class="row pull-left" style="direction:rtl !important;text-align:right !important;font-family: Cairo-Black; width:50%;">
+                                 <div class="row col-12 w-60">
+                                    <table class="table" style="font-family: Cairo-Black;">
+                                        <tr>
+                                            <td><strong>المجموع</strong></td>
+                                            <td style="border: 1px solid black;">
+                                                <t t-esc="o.amount_total"/>
+                                            </td>
+                                        </tr>
+                                        <tr t-if="'amount_discount' in o.fields_get()">
+                                            <td><strong>التخفيض</strong></td>
+                                            <td style="border: 1px solid black;">
+                                                <t t-esc="o.amount_discount"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>المجموع النهائي</strong></td>
+                                            <td style="border: 1px solid black;">
+                                                <t t-esc="o.amount_total - o.amount_discount" t-if="'amount_discount' in o.fields_get()"/>
+                                                <t t-esc="o.amount_total" t-if="'amount_discount' not in o.fields_get()"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

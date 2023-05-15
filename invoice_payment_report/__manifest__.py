@@ -27,9 +27,17 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'report/report_libyan_invoice.xml',
+        'report/report_libyan_payment.xml',
+        'report/accounting_reports.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
+    'assets': {
+        'web.report_assets_pdf': [
+            '/invoice_payment_report/static/src/css/invoice_payment.css',
+        ],
+    },
 }

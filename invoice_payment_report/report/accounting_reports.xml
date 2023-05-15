@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="libyan_invoice_report" model="ir.actions.report">
+            <field name="name">Libyan Invoice</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">invoice_payment_report.report_libyan_invoice</field>
+            <field name="report_file">invoice_payment_report.report_libyan_invoice</field>
+            <field name="binding_model_id" ref="account.model_account_move"/>
+            <field name="binding_type">report</field>
+            <field name="print_report_name">"Invoice"</field>
+        </record>
+
+        <record id="libyan_payment_report" model="ir.actions.report">
+            <field name="name">Libyan Payment</field>
+            <field name="model">account.payment</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">invoice_payment_report.report_libyan_payment</field>
+            <field name="report_file">invoice_payment_report.report_libyan_payment</field>
+            <field name="binding_model_id" ref="account.model_account_payment"/>
+            <field name="binding_type">report</field>
+            <field name="print_report_name">Payment</field>
+        </record>
+
+        <template id="invoice_payment_layout">
+            <t t-set="company" t-value="o.company_id"/>
+             <div class="header" style="float:left !important;direction:ltr !important;text-align:left;font-family:Cairo-Black !important;">
+                <div class="row col-12 pull-left oe_inline Cairo-Black">
+                <div class="col-7 pull-left">
+                        <img t-att-src="image_data_uri(company.logo)" style="width:300px !important;"/>
+                    </div>
+                </div>
+             </div>
+             <div class="article" t-att-data-oe-model="doc and doc._name" t-att-data-oe-id="doc and doc.id"
+                 t-att-data-oe-lang="doc and doc.env.context.get('lang')">
+                <t t-out="0"/>
+            </div>
+            <div class="footer">
+                <hr/>
+                <strong>Hi</strong>
+            </div>
+        </template>
+
+    </data>
+</odoo>
