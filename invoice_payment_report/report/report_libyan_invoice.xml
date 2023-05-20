@@ -47,9 +47,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row pull-right"
+                            <div class="row pull-right w-100 col-12"
                                  style="direction:rtl !important;text-align:right !important;font-family: Cairo-Black; width:100%;">
-                                <div class="row col-12">
+                                <div class="row col-12 w-60">
                                     <table class="table table-bordered" style="font-family: Cairo-Black;">
                                         <thead>
                                             <tr>
@@ -75,40 +75,63 @@
                                                         <t t-esc="l.quantity"/>
                                                     </td>
                                                     <td>
-                                                        <t t-esc="l.price_unit"/>
+                                                        <t t-esc="l.price_unit"
+                                                           t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                                     </td>
                                                     <td>
-                                                        <t t-esc="l.price_subtotal"/>
+                                                        <t t-esc="l.price_subtotal"
+                                                           t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                                     </td>
                                                 </t>
                                             </tr>
                                         </tbody>
                                     </table>
-                                    </div>
-                                    </div>
-                                <div class="row pull-left" style="direction:rtl !important;text-align:right !important;font-family: Cairo-Black; width:50%;">
-                                 <div class="row col-12 w-60">
+                                </div>
+                            </div>
+                            <div class="row pull-left w-100 col-12"
+                                 style="direction:rtl !important;text-align:right !important;font-family: Cairo-Black; width:50%;padding-left:30px !important;">
+                                <div class="row col-12 w-60">
                                     <table class="table" style="font-family: Cairo-Black;">
                                         <tr>
-                                            <td><strong>المجموع</strong></td>
+                                            <td>
+                                                <strong>المجموع</strong>
+                                            </td>
+
                                             <td style="border: 1px solid black;">
-                                                <t t-esc="o.amount_total"/>
+                                                <t t-esc="o.amount_total - o.amount_discount"
+                                                   t-if="'amount_discount' in o.fields_get()"
+                                                   t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                                <t t-esc="o.amount_total" t-if="'amount_discount' not in o.fields_get()"
+                                                   t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                             </td>
                                         </tr>
                                         <tr t-if="'amount_discount' in o.fields_get()">
-                                            <td><strong>التخفيض</strong></td>
+                                            <td>
+                                                <strong>التخفيض</strong>
+                                            </td>
                                             <td style="border: 1px solid black;">
-                                                <t t-esc="o.amount_discount"/>
+                                                <t t-esc="o.amount_discount"
+                                                   t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td><strong>المجموع النهائي</strong></td>
-                                            <td style="border: 1px solid black;">
-                                                <t t-esc="o.amount_total - o.amount_discount" t-if="'amount_discount' in o.fields_get()"/>
-                                                <t t-esc="o.amount_total" t-if="'amount_discount' not in o.fields_get()"/>
+                                            <td>
+                                                <strong>المجموع النهائي</strong>
                                             </td>
+                                            <td style="border: 1px solid black;">
+                                                <t t-esc="o.amount_total"
+                                                   t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                            </td>
+
                                         </tr>
                                     </table>
+                                </div>
+                                <div class="col-0 text-center" t-if="o.qr_code"
+                                     style="width:0px !important;height:0px !important;">
+                                    <div class="col-3 mb100">
+                                        <img t-if="o.qr_code" t-att-src="image_data_uri(o.qr_code)"
+                                             style="max-height: 200px !important;" alt="QR Code"/>
+                                    </div>
                                 </div>
                             </div>
                         </div>

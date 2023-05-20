@@ -37,9 +37,27 @@
                  t-att-data-oe-lang="doc and doc.env.context.get('lang')">
                 <t t-out="0"/>
             </div>
-            <div class="footer">
-                <hr/>
-                <strong>Hi</strong>
+            <div class="footer o_standard_footer" style="margin-bottom: 20px !important;padding-bottom:200mm !important;height:20px !important;">
+                <div class="text-center" style="border-top: 1px solid black;">
+<!--                    <ul class="list-inline">-->
+                      <div class="col-12 text-center" t-if="o.qr_code">
+                    <div class="col-3 mb6 pull-right">
+                        <img t-if="o.qr_code" t-att-src="image_data_uri(o.qr_code)"
+                             style="max-height: 100px;" alt="QR Code"/>
+                    </div>
+                    <div class="col-9 pull-left mt3">
+                        <div class="col-9 pull-left" style="text-align:left !important;direction:ltr !important;float:left !important;" t-if="company.phone"><i class="fa fa-mobile"><span t-field="company.phone" style="text-align:left !important;"/></i></div>
+                        <div class="col-9 pull-left" style="text-align:left !important;direction:ltr !important;float:left !important;" t-if="company.mobile"><i class="fa fa-mobile"><span t-field="company.mobile" style="text-align:left !important;"/></i></div>
+                        <div class="col-9 pull-left" style="text-align:left !important;direction:ltr !important;float:left !important;" t-if="company.email"><i class="fa fa-envelope"><span t-field="company.email" style="text-align:left !important;"/></i></div>
+                        <div class="col-9 pull-left" style="text-align:left !important;direction:ltr !important;float:left !important;" t-if="company.website"><i class="fa fa-globe"><span t-field="company.website" style="text-align:left !important;"/></i></div>
+                        <div class="col-9 pull-left" style="text-align:left !important;direction:ltr !important;float:left !important;" t-if="company.street"><i class="fa fa-map-marker"><span t-field="company.street" style="text-align:left !important;"/></i></div>
+                    </div>
+                </div>
+
+<!--                    </ul>-->
+                  </div>
+<!--                <hr/>-->
+
             </div>
         </template>
 
