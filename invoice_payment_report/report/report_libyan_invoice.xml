@@ -129,8 +129,8 @@
                                 <div class="col-0 text-center" t-if="o.qr_code"
                                      style="width:0px !important;height:0px !important;">
                                     <div class="col-3 mb100">
-                                        <img t-if="o.qr_code" t-att-src="image_data_uri(o.qr_code)"
-                                             style="max-height: 200px !important;" alt="QR Code"/>
+<!--                                        <img t-if="o.qr_code" t-att-src="image_data_uri(o.qr_code)"-->
+<!--                                             style="max-height: 200px !important;" alt="QR Code"/>-->
                                     </div>
                                 </div>
                             </div>
