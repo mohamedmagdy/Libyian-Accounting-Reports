@@ -18,13 +18,13 @@
                             <div class="row pull-right"
                                  style="direction:rtl !important;text-align:right !important;font-family: Cairo-Black !important; width:100%;">
                                 <div class="row col-12">
-                                    <div class="col-6" style="text-align:right !important;font-family: Cairo-Black !important;">
+                                    <div class="col-6" style="text-align:right !important;font-family: Cairo-Light !important;">
                                         <strong style="font-family: Cairo-Black !important;">الأخ:</strong>
                                         <t t-esc="o.partner_id.name"/>
                                         <br/>
                                     </div>
                                     <div class="col-6"
-                                         style="text-align:left !important;font-family: Cairo-Black !important;float:left !important;">
+                                         style="text-align:left !important;font-family: Cairo-Light !important;float:left !important;">
                                         <strong>رقم الفاتورة:</strong>
                                         <t t-esc="o.name"/>
                                         <br/>
