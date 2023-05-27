@@ -4,10 +4,3 @@
     font-weight: normal;
     font-style: normal;
 }
-
-@font-face {
-    font-family: 'Cairo-Light';
-    src: url('/invoice_payment_report/static/src/fonts/Cairo-Light.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
