@@ -10,21 +10,21 @@
                             <div class="row text-center" style="text-align: center !important;">
                                 <div class="row col-12 text-center pull-right"
                                      style="text-align: center !important;float:right: direction:rtl !important;">
-                                    <h2 style="font-family: Cairo-Bold;font-weight: bold;text-align: center !important;width:100%;"
+                                    <h2 style="font-family: Cairo-Black !important;font-weight: bold;text-align: center !important;width:100%;"
                                         class="text-center">فاتورة
                                     </h2>
                                 </div>
                             </div>
                             <div class="row pull-right"
-                                 style="direction:rtl !important;text-align:right !important;font-family: Cairo-Black; width:100%;">
+                                 style="direction:rtl !important;text-align:right !important;font-family: Cairo-Black !important; width:100%;">
                                 <div class="row col-12">
-                                    <div class="col-6" style="text-align:right !important;font-family: Cairo-Black;">
-                                        <strong style="font-family: Cairo-Black;">الأخ:</strong>
+                                    <div class="col-6" style="text-align:right !important;font-family: Cairo-Black !important;">
+                                        <strong style="font-family: Cairo-Black !important;">الأخ:</strong>
                                         <t t-esc="o.partner_id.name"/>
                                         <br/>
                                     </div>
                                     <div class="col-6"
-                                         style="text-align:left !important;font-family: Cairo-Black;float:left !important;">
+                                         style="text-align:left !important;font-family: Cairo-Black !important;float:left !important;">
                                         <strong>رقم الفاتورة:</strong>
                                         <t t-esc="o.name"/>
                                         <br/>
@@ -32,15 +32,15 @@
                                 </div>
                             </div>
                             <div class="row pull-right"
-                                 style="direction:rtl !important;text-align:right !important;font-family: Cairo-Black; width:100%;">
+                                 style="direction:rtl !important;text-align:right !important;font-family: Cairo-Black !important; width:100%;">
                                 <div class="row col-12">
-                                    <div class="col-6" style="text-align:right !important;font-family: Cairo-Black;">
-                                        <strong style="font-family: Cairo-Black;">البيان:</strong>
+                                    <div class="col-6" style="text-align:right !important;font-family: Cairo-Black !important;">
+                                        <strong style="font-family: Cairo-Black !important;">البيان:</strong>
                                         <t t-esc="o.partner_id.name"/>
                                         <br/>
                                     </div>
                                     <div class="col-6"
-                                         style="text-align:left !important;font-family: Cairo-Black;float:left !important;">
+                                         style="text-align:left !important;font-family: Cairo-Black !important;float:left !important;">
                                         <strong>التاريخ:</strong>
                                         <t t-esc="o.invoice_date"/>
                                         <br/>
@@ -89,9 +89,9 @@
                                 </div>
                             </div>
                             <div class="row pull-left w-100 col-12"
-                                 style="direction:rtl !important;text-align:right !important;font-family: Cairo-Black; width:50%;padding-left:30px !important;">
+                                 style="direction:rtl !important;text-align:right !important;font-family: Cairo-Black !important; width:50%;padding-left:30px !important;">
                                 <div class="row col-12 w-60">
-                                    <table class="table" style="font-family: Cairo-Black;">
+                                    <table class="table" style="font-family: Cairo-Black !important;">
                                         <tr>
                                             <td>
                                                 <strong>المجموع</strong>

@@ -10,56 +10,56 @@
                             <div class="row text-center" style="text-align: center !important;">
                                 <div class="row col-12 text-center pull-right"
                                      style="text-align: center !important;float:right: direction:rtl !important;">
-                                    <h2 style="font-family: Cairo-Bold;font-weight: bold;text-align: center !important;width:100%;"
+                                    <h2 style="font-family: Cairo-Black !important;font-weight: bold;text-align: center !important;width:100%;"
                                         class="text-center">إيصال قبض
                                     </h2>
                                 </div>
                             </div>
                             <div class="row pull-right"
-                                 style="direction:rtl !important;text-align:right !important;font-family: Cairo-Black; width:100%;">
-                                <table style="width:100%;font-family: Cairo-Black;">
+                                 style="direction:rtl !important;text-align:right !important;font-family: Cairo-Black !important; width:100%;">
+                                <table style="width:100%;font-family: Cairo-Black !important;">
                                     <tr>
-                                        <td style="text-align:right !important;font-family: Cairo-Black;">
-                                            <strong style="font-family: Cairo-Black;">إستلام من</strong>
+                                        <td style="text-align:right !important;font-family: Cairo-Black !important;">
+                                            <strong style="font-family: Cairo-Black  !important;">إستلام من</strong>
                                             <br/>
                                         </td>
-                                        <td style="text-align:right !important;font-family: Cairo-Black;float:right !important;">
+                                        <td style="text-align:right !important;font-family: Cairo-Black !important;float:right !important;">
                                             <strong>رقم الإيصال:</strong>
                                             <t t-esc="o.name"/>
                                             <br/>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="text-align:right !important;font-family: Cairo-Black;">
-                                            <strong style="font-family: Cairo-Black;">اسم الشركة: </strong>
+                                        <td style="text-align:right !important;font-family: Cairo-Black !important;">
+                                            <strong style="font-family: Cairo-Black !important;">اسم الشركة: </strong>
                                             <t t-esc="o.partner_id.name"/>
                                             <br/>
                                         </td>
-                                        <td style="text-align:right !important;font-family: Cairo-Black;float:right !important;">
+                                        <td style="text-align:right !important;font-family: Cairo-Black !important;float:right !important;">
                                             <strong>التاريخ: </strong>
                                             <t t-esc="o.date"/>
                                             <br/>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="text-align:right !important;font-family: Cairo-Black;">
-                                            <strong style="font-family: Cairo-Black;">عنوان الشركة: </strong>
+                                        <td style="text-align:right !important;font-family: Cairo-Black !important;">
+                                            <strong style="font-family: Cairo-Black !important;">عنوان الشركة: </strong>
                                             <t t-esc="o.partner_id.name"/>
                                             <br/>
                                         </td>
                                         <td/>
                                     </tr>
                                     <tr>
-                                        <td style="text-align:right !important;font-family: Cairo-Black;">
-                                            <strong style="font-family: Cairo-Black;">البريد الإلكتروني: </strong>
+                                        <td style="text-align:right !important;font-family: Cairo-Black !important;">
+                                            <strong style="font-family: Cairo-Black !important;">البريد الإلكتروني: </strong>
                                             <t t-esc="o.partner_id.email"/>
                                             <br/>
                                         </td>
                                         <td/>
                                     </tr>
                                     <tr>
-                                        <td style="text-align:right !important;font-family: Cairo-Black;">
-                                            <strong style="font-family: Cairo-Black;">رقم الهاتف: </strong>
+                                        <td style="text-align:right !important;font-family: Cairo-Black !important;">
+                                            <strong style="font-family: Cairo-Black !important;">رقم الهاتف: </strong>
                                             <t t-esc="o.partner_id.phone"/>
                                             <br/>
                                         </td>
@@ -68,24 +68,24 @@
                                 </table>
                             </div>
                             <div class="row pull-right"
-                                 style="direction:rtl !important;text-align:right !important;font-family: Cairo-Black; width:100%;">
-                                <table class="table table-bordered" style="width:100%;font-family: Cairo-Black;">
+                                 style="direction:rtl !important;text-align:right !important;font-family: Cairo-Black !important; width:100%;">
+                                <table class="table table-bordered" style="width:100%;font-family: Cairo-Black !important;">
                                     <tr>
-                                        <th style="text-align:center !important;font-family: Cairo-Black;">قيمة وقدرها</th>
-                                        <td style="text-align:center !important;font-family: Cairo-Black;">
+                                        <th style="text-align:center !important;font-family: Cairo-Black !important;">قيمة وقدرها</th>
+                                        <td style="text-align:center !important;font-family: Cairo-Black !important;">
                                             <t t-esc="o.amount" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th style="text-align:center !important;font-family: Cairo-Black;">الملاحظات</th>
+                                        <th style="text-align:center !important;font-family: Cairo-Black !important;">الملاحظات</th>
 
-                                        <td style="text-align:center !important;font-family: Cairo-Black;">
+                                        <td style="text-align:center !important;font-family: Cairo-Black !important;">
                                             <t t-esc="o.ref"/>
                                         </td>
                                     </tr>
                                 </table>
                             </div>
-                            <div class="row pull-left" style="width:100%;font-family: Cairo-Black;direction:rtl;text-align:right;">
+                            <div class="row pull-left" style="width:100%;font-family: Cairo-Black !important;direction:rtl;text-align:right;">
                                 <div>باقي الحساب: </div>
                                 <span t-esc="o.partner_id.payment_amount_due" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                             </div>
