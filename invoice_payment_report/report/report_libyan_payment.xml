@@ -86,7 +86,7 @@
                                 </table>
                             </div>
                             <div class="row pull-left" style="width:100%;font-family: Cairo-Black !important;direction:rtl;text-align:right;">
-                                <div style="font-family: Cairo-Black !important">باقي الحساب: </div>
+                                <div style="font-family: Cairo-Black !important;font-weight: bold">باقي الحساب: </div>
                                 <span t-esc="o.partner_id.payment_amount_due" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                             </div>
                         </div>
