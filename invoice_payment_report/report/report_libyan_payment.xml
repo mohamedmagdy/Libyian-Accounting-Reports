@@ -16,8 +16,8 @@
                                 </div>
                             </div>
                             <div class="row pull-right"
-                                 style="direction:rtl !important;text-align:right !important;font-family: Cairo-Black !important; width:100%;">
-                                <table style="width:100%;font-family: Cairo-Black !important;">
+                                 style="direction:rtl !important;text-align:right !important;font-family: Cairo-Light !important; width:100%;">
+                                <table style="width:100%;font-family: Cairo-Light !important;">
                                     <tr>
                                         <td style="text-align:right !important;font-family: Cairo-Black !important;">
                                             <strong style="font-family: Cairo-Black  !important;">إستلام من</strong>
@@ -68,18 +68,18 @@
                                 </table>
                             </div>
                             <div class="row pull-right"
-                                 style="direction:rtl !important;text-align:right !important;font-family: Cairo-Black !important; width:100%;">
+                                 style="direction:rtl !important;text-align:right !important;font-family: Cairo-Light !important; width:100%;">
                                 <table class="table table-bordered" style="width:100%;font-family: Cairo-Black !important;">
                                     <tr>
                                         <th style="text-align:center !important;font-family: Cairo-Black !important;">قيمة وقدرها</th>
-                                        <td style="text-align:center !important;font-family: Cairo-Black !important;">
+                                        <td style="text-align:center !important;font-family: Cairo-Light !important;">
                                             <t t-esc="o.amount" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <th style="text-align:center !important;font-family: Cairo-Black !important;">الملاحظات</th>
 
-                                        <td style="text-align:center !important;font-family: Cairo-Black !important;">
+                                        <td style="text-align:center !important;font-family: Cairo-Light !important;">
                                             <t t-esc="o.ref"/>
                                         </td>
                                     </tr>
