@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'account', 'sale_discount_total'],
+    'depends': ['base', 'account', 'sale_discount_total', 'ehcs_qr_code_base', 'om_account_followup'],
 
     # always loaded
     'data': [
