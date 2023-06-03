@@ -59,11 +59,13 @@ class AccountInvoice(models.Model):
             total_residual_currency = 0.0
             total = 0.0
             total_currency = 0.0
-            currencies = set()
+            currencies = {move._get_lines_onchange_currency().currency_id}
+            # print(currencies)
 
             for line in move.line_ids:
-                if line.currency_id:
-                    currencies.add(line.currency_id)
+                # if line.currency_id:
+                #     currencies.add(line.currency_id)
+                # print(currencies)
 
                 if move.is_invoice(include_receipts=True):
                     # === Invoices ===
